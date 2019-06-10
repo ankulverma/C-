@@ -1,0 +1,105 @@
+OverloadingExamples.cpp
+
+Type
+C++
+Size
+2 KB (1,634 bytes)
+Storage used
+0 bytesOwned by
+Location
+CPP_March_2019
+Owner
+Rajneesh Agrawal
+Modified
+Apr 29, 2019 by Rajneesh Agrawal
+Opened
+2:34 PM by me
+Created
+Apr 29, 2019
+No description
+Viewers can download
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+class ComplexNo {
+	double re, im;
+public:
+	ComplexNo() {
+		this->re = 0;
+		this->im = 0;
+	}
+	ComplexNo(double re, double im) {
+		this->re = re;
+		this->im = im;
+	}
+	ComplexNo(const ComplexNo &r) {
+		this->re = r.re;
+		this->im = r.im;
+		cout << endl << "I am copy constructor";
+	}
+	void GetData() {
+		cout << endl << "Enter Real Part :";
+		cin >> this->re;
+		cout << endl << "Enter Imaginary Part :";
+		cin >> this->im;
+	}
+	void showData() {
+		cout << endl << this->re << " + i " << this->im;
+	}
+	ComplexNo add(ComplexNo c) {
+		ComplexNo temp;
+		temp.re = this->re + c.re;
+		temp.im = this->im + c.im;
+		return temp;
+	}
+	ComplexNo GetConjugate() {
+		ComplexNo temp;
+		temp.re = this->re;
+		temp.im = this->im*-1;
+		return temp;
+	}
+	ComplexNo operator+(ComplexNo c) {
+		ComplexNo temp;
+		temp.re = this->re + c.re;
+		temp.im = this->im + c.im;
+		return temp;
+	}
+	ComplexNo operator++() {
+		return ComplexNo(++this->re,this->im);
+		////this->re++;
+		////return *this;
+		//ComplexNo temp;
+		//temp.re = this->re+1;
+		//temp.im = this->im;
+		//this->re++;
+		//return temp;
+	}
+ComplexNo operator++(int dummy) {
+		ComplexNo temp;
+		temp = *this;
+		//temp.re = this->re;
+		//temp.im = this->im;
+		this->re++;
+		return temp;
+	}
+};
+
+void main() {
+	ComplexNo c1;
+	c1.GetData();
+	ComplexNo c2 = c1;
+	ComplexNo c3;
+	//c3 = c1.add(c2);
+	c3 = c1 + c2;
+	c3.showData();
+	ComplexNo c4 = ++c1;
+	ComplexNo c5 = c2++;
+	//cout << c1;
+	c1.showData();
+	c2.showData();
+	c4.showData();
+	c5.showData();
+	getch();
+}
