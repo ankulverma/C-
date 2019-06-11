@@ -1,23 +1,6 @@
 OperatorExamples.cpp
 
-Type
-C++
-Size
-3 KB (2,894 bytes)
-Storage used
-0 bytesOwned by
-Location
-CPP_March_2019
-Owner
-Rajneesh Agrawal
-Modified
-Mar 30, 2019 by Rajneesh Agrawal
-Opened
-2:36 PM by me
-Created
-Mar 30, 2019
-No description
-Viewers can download
+
 #include<iostream>
 #include<conio.h>
 #include<iomanip>
