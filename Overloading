@@ -1,23 +1,5 @@
 OverloadingExamples.cpp
 
-Type
-C++
-Size
-2 KB (1,634 bytes)
-Storage used
-0 bytesOwned by
-Location
-CPP_March_2019
-Owner
-Rajneesh Agrawal
-Modified
-Apr 29, 2019 by Rajneesh Agrawal
-Opened
-2:34 PM by me
-Created
-Apr 29, 2019
-No description
-Viewers can download
 #include<iostream>
 #include<conio.h>
 
