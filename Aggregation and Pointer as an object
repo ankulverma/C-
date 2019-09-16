@@ -1,0 +1,71 @@
+#include <iostream>
+
+using namespace std;
+// Aggregation -- Has-a relationship
+class Address {
+public:
+    char addname , state,city;
+public :
+    Address(char addname,char state,char city)
+    {
+        this->addname=addname;
+        this->state=state;
+        this->city=city;
+
+    }
+
+};
+class Employee{
+int empid ;
+char empname;
+Address* addr;
+public :
+    Employee(int empid ,char name,Address* addr)
+    {
+        this->empid=empid;
+        this->empname=empname;
+        this->addr=addr;
+
+    }
+    void display(){
+    cout<<"Employee Id "<<empid<<endl;
+    cout<<"Employee Name "<< empname<<endl;
+    cout<<"Employee State "<<addr->state<<endl;
+    cout<<"Employee City "<<addr->city<<endl;
+    }
+};
+int main()
+{
+Address e1= Address(101,'S','J');
+Employee a1= Employee(101,'N',&e1);
+a1.display();
+
+
+}
+//Pointer as an object
+/*class A {
+private:
+int l,b,h;
+public :
+    A(int l1,int b1,int h1 )
+    {
+        l=l1;
+        b=b1;
+        h=h1;
+    }
+    int vol()
+    {
+        return (l*b*h);
+    }
+
+};
+int main()
+{
+    A a1(10,20,30);
+    A *ptr;
+    ptr = &a1;
+
+    cout << "Volume is " << ptr->vol()<< endl;
+    return 0;
+}
+*/
